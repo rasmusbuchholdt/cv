@@ -1,12 +1,16 @@
-import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
+import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 
 export const RESUME_DATA = {
   name: "Rasmus Buchholdt",
   location: "Aalborg, Denmark",
   locationLink: "https://www.google.com/maps/place/Aalborg",
-  about: "Lorem ipsum",
-  summary:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  about: "Full-stack developer",
+  metaDescription: 'Full-stack developer, that loves to learn new technologies and solve problematic challenges.',
+  summary: [
+    'Full-stack developer, that loves to learn new technologies and solve problematic challenges.',
+    'Skillset is very wide, everything from laying out architecture of big projects to implementing the backend in .NET and frontend in Angular/React with continuous integration.',
+    'I have a M.Sc in Computer Science and run Openomic, where I manage the business and work as a full-stack developer overseeing projects, working closely with customers from the initial meetings to long-term relationships.'
+  ],
   avatarUrl: "https://avatars.githubusercontent.com/u/9290148?v=4",
   personalWebsiteUrl: "https://buchholdt.dev",
   contact: {

@@ -1,17 +1,15 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CommandMenu } from "@/components/command-menu";
-import { Metadata, MetadataRoute } from "next";
+import { Metadata } from "next";
 import { Section } from "@/components/ui/section";
 import { GlobeIcon, MailIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
-import { ProjectCard } from "@/components/project-card";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
-  description: RESUME_DATA.summary,
+  description: RESUME_DATA.metaDescription,
 };
 
 export default function Page() {
@@ -77,9 +75,11 @@ export default function Page() {
         </div>
         <Section>
           <h2 className="text-xl font-bold">About</h2>
-          <p className="text-pretty font-mono text-sm text-muted-foreground">
-            {RESUME_DATA.summary}
-          </p>
+          {RESUME_DATA.summary.map((badge, i) => (
+            <p key={i} className="text-pretty font-mono text-sm text-muted-foreground">
+              {badge}
+            </p>
+          ))}
         </Section>
         <Section>
           <h2 className="text-xl font-bold">Work Experience</h2>
@@ -167,19 +167,6 @@ export default function Page() {
           </div>
         </Section> */}
       </section>
-
-      <CommandMenu
-        links={[
-          {
-            url: RESUME_DATA.personalWebsiteUrl,
-            title: "Personal Website",
-          },
-          ...RESUME_DATA.contact.social.map((socialMediaLink) => ({
-            url: socialMediaLink.url,
-            title: socialMediaLink.name,
-          })),
-        ]}
-      />
     </main>
   );
 }
